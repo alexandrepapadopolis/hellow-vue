@@ -4,32 +4,23 @@ export default createStore({
   state() {
     return {
       count: 0,
-      lastUpdated: null
+      todos: [],
+      lastFetch: null,
     }
   },
   getters: {
-    doubled(state) {
-      return state.count * 2
-    }
+    doubled: (s) => s.count * 2,
+    todosCount: (s) => s.todos.length
   },
   mutations: {
-    increment(state, value = 1) {
-      state.count += value
-      state.lastUpdated = new Date().toISOString()
+    increment(s, value = 1) { s.count += value },
+    reset(s) { s.count = 0 },
+    setTodos(s, todos) {
+      s.todos = todos
+      s.lastFetch = new Date().toISOString()
     },
-    reset(state) {
-      state.count = 0
-      state.lastUpdated = new Date().toISOString()
-    }
   },
   actions: {
-    asyncIncrement({ commit }, value = 1) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          commit('increment', value)
-          resolve()
-        }, 300)
-      })
-    }
+    // reservado: a demo usa axios direto no componente
   }
 })

@@ -13,7 +13,7 @@ Projeto-base do curso de **Programador Web**, desenvolvido com Vue.js 3, Vite, V
 
 1. Baixe o projeto em **Code → Download ZIP**, nesta página, e extraia os arquivos.
 2. Abra a pasta extraída no VS Code.
-3. Abra um terminal nessa pasta e execute:
+3. Abra um Command Prompt (CMD) nessa pasta e execute:
 
    ```bash
    docker compose up
